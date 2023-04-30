@@ -3,12 +3,12 @@ $fs = 0.4;
 
 inner_diameter = 170;
 thickness = 2;
-outside_diameter = inner_diameter + thickness;
+outside_diameter = inner_diameter + thickness * 2;
 
 height = 30;
 clear_aperture = 130;
 
-!filter_guard();
+// filter_guard();
 filter_housing();
 
 module filter_housing()
@@ -16,7 +16,7 @@ module filter_housing()
     difference()
     {
         rounded_cylinder(h = height, r = outside_diameter / 2);
-        translate(v = [ 0, 0, thickness ]) cylinder(h = height, r = inner_diameter / 2 - thickness);
+        translate(v = [ 0, 0, thickness ]) cylinder(h = height, r = inner_diameter / 2);
         translate(v = [ 0, 0, -thickness ]) cylinder(h = height, r = clear_aperture / 2);
     }
 }
