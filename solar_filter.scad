@@ -1,14 +1,16 @@
 $fa = 1;
 $fs = 0.4;
 
+// Add 2mm to measurement to leave clearance for felt
 inner_diameter = 170;
-thickness = 2;
-outside_diameter = inner_diameter + thickness * 2;
-
-height = 30;
 clear_aperture = 130;
 
-!filter_guard();
+thickness = 2;
+outside_diameter = inner_diameter + thickness * 2;
+height = 30;
+
+// Comment one out to render the other
+filter_guard();
 filter_housing();
 
 module filter_housing()
